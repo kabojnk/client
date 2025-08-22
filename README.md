@@ -1,7 +1,3 @@
-# Mare Synchronos Dalamud Plugin
+# Cyprus Synchronos Dalamud Plugin
 
-Available at [This dalamud Repo](https://raw.githubusercontent.com/MareSynchronos/repo/main/plogonmaster.json)
-
-# [Mare Synchronos Discord](https://discord.gg/5HVveFefcB)
-
-Readme TBD
+Available at [This dalamud Repo](https://github.com/kabojnk/repo/blob/main/plogonmaster.json)
