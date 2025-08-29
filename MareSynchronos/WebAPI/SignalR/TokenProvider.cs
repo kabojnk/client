@@ -66,8 +66,12 @@ public sealed class TokenProvider : IDisposable, IMediatorSubscriber
                     tokenUri = MareAuth.AuthFullPath(new Uri(_serverManager.CurrentApiUrl
                         .Replace("wss://", "https://", StringComparison.OrdinalIgnoreCase)
                         .Replace("ws://", "http://", StringComparison.OrdinalIgnoreCase)));
+                    _logger.LogInformation("Token URI {uri}", tokenUri.ToString());
                     var secretKey = _serverManager.GetSecretKey(out _)!;
                     var auth = secretKey.GetHash256();
+                    _logger.LogInformation("auth: {test}", auth);
+                    _logger.LogInformation("charIdent: {test}", await _dalamudUtil.GetPlayerNameHashedAsync().ConfigureAwait(false));
+
                     _logger.LogInformation("Sending SecretKey Request to server with auth {auth}", string.Join("", identifier.SecretKeyOrOAuth.Take(10)));
                     result = await _httpClient.PostAsync(tokenUri, new FormUrlEncodedContent(
                     [

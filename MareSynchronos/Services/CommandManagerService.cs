@@ -36,13 +36,13 @@ public sealed class CommandManagerService : IDisposable
         _mareConfigService = mareConfigService;
         _commandManager.AddHandler(_commandName, new CommandInfo(OnCommand)
         {
-            HelpMessage = "Opens the Mare Synchronos UI" + Environment.NewLine + Environment.NewLine +
+            HelpMessage = "Opens the Cyprus Synchronos UI" + Environment.NewLine + Environment.NewLine +
                 "Additionally possible commands:" + Environment.NewLine +
-                "\t /mare toggle - Disconnects from Mare, if connected. Connects to Mare, if disconnected" + Environment.NewLine +
-                "\t /mare toggle on|off - Connects or disconnects to Mare respectively" + Environment.NewLine +
-                "\t /mare gpose - Opens the Mare Character Data Hub window" + Environment.NewLine +
-                "\t /mare analyze - Opens the Mare Character Data Analysis window" + Environment.NewLine +
-                "\t /mare settings - Opens the Mare Settings window"
+                "\t /mare toggle - Disconnects from Cyprus, if connected. Connects to Cyprus, if disconnected" + Environment.NewLine +
+                "\t /mare toggle on|off - Connects or disconnects to Cyprus respectively" + Environment.NewLine +
+                "\t /mare gpose - Opens the Cyprus Character Data Hub window" + Environment.NewLine +
+                "\t /mare analyze - Opens the Cyprus Character Data Analysis window" + Environment.NewLine +
+                "\t /mare settings - Opens the Cyprus Settings window"
         });
     }
 

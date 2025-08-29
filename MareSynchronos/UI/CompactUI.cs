@@ -118,7 +118,7 @@ public class CompactUi : WindowMediatorSubscriberBase
         Toggle();
 #else
         var ver = Assembly.GetExecutingAssembly().GetName().Version;
-        WindowName = "Mare Synchronos " + ver.Major + "." + ver.Minor + "." + ver.Build + "###MareSynchronosMainUI";
+        WindowName = "Cyprus Synchronos " + ver.Major + "." + ver.Minor + "." + ver.Build + "###MareSynchronosMainUI";
 #endif
         Mediator.Subscribe<SwitchToMainUiMessage>(this, (_) => IsOpen = true);
         Mediator.Subscribe<SwitchToIntroUiMessage>(this, (_) => IsOpen = false);
@@ -151,8 +151,8 @@ public class CompactUi : WindowMediatorSubscriberBase
                 ImGui.AlignTextToFramePadding();
                 ImGui.TextColored(ImGuiColors.DalamudRed, unsupported);
             }
-            UiSharedService.ColorTextWrapped($"Your Mare Synchronos installation is out of date, the current version is {ver.Major}.{ver.Minor}.{ver.Build}. " +
-                $"It is highly recommended to keep Mare Synchronos up to date. Open /xlplugins and update the plugin.", ImGuiColors.DalamudRed);
+            UiSharedService.ColorTextWrapped($"Your Cyprus Synchronos installation is out of date, the current version is {ver.Major}.{ver.Minor}.{ver.Build}. " +
+                $"It is highly recommended to keep Cyprus Synchronos up to date. Open /xlplugins and update the plugin.", ImGuiColors.DalamudRed);
         }
 
         if (!_ipcManager.Initialized)
@@ -566,10 +566,10 @@ public class CompactUi : WindowMediatorSubscriberBase
         {
             ServerState.Connecting => "Attempting to connect to the server.",
             ServerState.Reconnecting => "Connection to server interrupted, attempting to reconnect to the server.",
-            ServerState.Disconnected => "You are currently disconnected from the Mare Synchronos server.",
+            ServerState.Disconnected => "You are currently disconnected from the Cyprus Synchronos server.",
             ServerState.Disconnecting => "Disconnecting from the server",
             ServerState.Unauthorized => "Server Response: " + _apiController.AuthFailureMessage,
-            ServerState.Offline => "Your selected Mare Synchronos server is currently offline.",
+            ServerState.Offline => "Your selected Cyprus Synchronos server is currently offline.",
             ServerState.VersionMisMatch =>
                 "Your plugin or the server you are connecting to is out of date. Please update your plugin now. If you already did so, contact the server provider to update their server to the latest version.",
             ServerState.RateLimited => "You are rate limited for (re)connecting too often. Disconnect, wait 10 minutes and try again.",
@@ -578,7 +578,7 @@ public class CompactUi : WindowMediatorSubscriberBase
             ServerState.MultiChara => "Your Character Configuration has multiple characters configured with same name and world. You will not be able to connect until you fix this issue. Remove the duplicates from the configuration in Settings -> Service Settings -> Character Management and reconnect manually after.",
             ServerState.OAuthMisconfigured => "OAuth2 is enabled but not fully configured, verify in the Settings -> Service Settings that you have OAuth2 connected and, importantly, a UID assigned to your current character.",
             ServerState.OAuthLoginTokenStale => "Your OAuth2 login token is stale and cannot be used to renew. Go to the Settings -> Service Settings and unlink then relink your OAuth2 configuration.",
-            ServerState.NoAutoLogon => "This character has automatic login into Mare disabled. Press the connect button to connect to Mare.",
+            ServerState.NoAutoLogon => "This character has automatic login into Mare disabled. Press the connect button to connect to Cyprus.",
             _ => string.Empty
         };
     }
